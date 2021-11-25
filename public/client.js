@@ -11,15 +11,16 @@ while(!name){
 }
 
 messageTextarea.addEventListener("keyup",function(e){
-    if(e.key=='Enter'){
+    if(e.key=='Enter' && e.target.value.trim() != ""){
         sendMessage(e.target.value)
         e.target.value="";
     }
 })
 form.addEventListener("submit",function(e){
     e.preventDefault();
-    console.log(e.target[0].value);
-    sendMessage(e.target[0].value);
+    if(e.target[0].value != ""){
+        sendMessage(e.target[0].value);
+    }
     form.reset();
 })
 
