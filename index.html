@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chit Chat</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./chat.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="page">
+        <div class="container">
+            <div class="heading">
+                <img src="./chat.png" class="heading-logo">
+                <h1 class="heading-title">Chit Chat</h1>
+            </div>
+
+            <div class="message-container" id="message-container">
+
+                <!-- <div class="friend-message">
+                    <div class="username"> <p> Sasuke Uchiha </p> </div>
+                    <div class="message">Hey Naruto... Whassup?</div>
+                </div> -->
+
+                <!-- <div class="mymessage">
+                    <div class="username"> <p> Naruto Uzumaki </p></div>
+                    <div class="message">Nothing much..just going on a mission with Kakashi Sensei</div>
+                </div> -->
+
+                <!-- <div class="join-message">
+                    <div class="message">Nobita joined the chat</div>
+                </div> -->
+
+            </div>
+
+            <div class="message-send">
+                <form action="/send" method="POST" id="form">
+                    <textarea name="sending-message" cols="50" rows="1" placeholder="Write a message"
+                        id="message-textarea"></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./client.js"></script>
+</body>
+
+</html>
