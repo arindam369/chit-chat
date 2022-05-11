@@ -1,6 +1,7 @@
 console.log("Chit Chat Console -- created by Arindam");
 const messageTextarea = document.getElementById("message-textarea"); 
 const messageContainer = document.getElementById("message-container");
+const typingContainer = document.getElementById("typing-text");
 const form = document.getElementById("form");
 const socket = io();
 
@@ -16,6 +17,16 @@ messageTextarea.addEventListener("keyup",function(e){
         e.target.value="";
     }
 })
+
+
+// typing :
+// messageTextarea.addEventListener("keypress", ()=>{
+//     socket.emit("typing", name);
+// })
+messageTextarea.addEventListener("keyup", ()=>{
+    socket.emit("typing", name);
+})
+
 form.addEventListener("submit",function(e){
     e.preventDefault();
     if(e.target[0].value != ""){
@@ -101,6 +112,14 @@ function leaveMessage(username){
 }
 
 
+function typingMessage(username){
+    typingContainer.textContent = `${username} is typing...`;
+    setTimeout(() => {
+        typingContainer.textContent="";
+    }, 2000);
+}
+
+
 // Receive Message from the server
 socket.on("message",function(msg){
     receiveMessage(msg);
@@ -114,3 +133,6 @@ socket.on("user-left",function(username){
     leaveMessage(username);
 })
 
+socket.on("user-typing", function(username){
+    typingMessage(username);
+})
