@@ -10,12 +10,18 @@
     <link rel="shortcut icon" href="./chat.png" type="image/x-icon">
 </head>
 
-<body>
+<body id="body">
     <div class="page">
         <div class="container">
-            <div class="heading">
-                <img src="./chat.png" class="heading-logo">
-                <h1 class="heading-title">Chit Chat</h1>
+            <div class="heading heading-light-bg" id="heading" >
+                <div>
+                    <img src="./chat.png" class="heading-logo">
+                    <h1 class="heading-title">Chit Chat</h1>
+                </div>
+
+                <div class="light-dark" id="light-dark">
+                    <img src="./dark.png" alt="img" height="40px" id="light-dark-logo">
+                </div>
             </div>
 
             <div class="message-container" id="message-container">
@@ -37,7 +43,7 @@
             </div>
 
 
-            
+
             <div class="typingMessageBox">
                 <div id="typing-text"></div>
             </div>
@@ -58,6 +64,35 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="./client.js"></script>
+    
+    <script>
+        const lightDark = document.getElementById("light-dark");
+        const heading = document.getElementById("heading");
+        const lightDarkLogo = document.getElementById("light-dark-logo");
+        const body = document.getElementById("body");
+
+        var darkMode = 0;
+
+        lightDark.addEventListener("click", ()=>{
+            if(darkMode == 0){
+                darkMode = 1;
+                heading.classList.remove("heading-light-bg");
+                heading.classList.add("heading-dark-bg");
+                lightDarkLogo.src = "./light.png";
+                body.style.backgroundColor = "black";
+            }
+            else{
+                darkMode = 0;
+                heading.classList.remove("heading-dark-bg");
+                heading.classList.add("heading-light-bg");
+                lightDarkLogo.src = "./dark.png";
+                body.style.backgroundColor = "rgb(240, 234, 234)";
+            }
+            // console.log(darkMode);
+        })
+        
+    </script>
+
 </body>
 
 </html>

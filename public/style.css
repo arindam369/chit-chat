@@ -12,16 +12,31 @@
 .container{
     border-radius: 12px;
     box-shadow: rgba(173, 173, 173, 0.795) 3px 3px 13px 3px,rgba(173, 173, 173, 0.795) -3px -3px 13px 3px;
+    background-color: white;
+    /* background-color: rgb(111, 129, 214); */
 }
 .heading{
     padding: 10px;
     margin-bottom: 10px;
-    background-color: rgb(77, 121, 207);
+    background-color: rgb(82, 129, 224);
     border-radius: 12px 12px 0px 0px;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    justify-content: space-between;
     color: white;
+    align-items: center;
+    
+    
+    /* background: linear-gradient(to top right, rgba(64, 93, 230), rgba(88, 81, 216),rgba(131, 58, 180), rgba(193, 53, 132)); */
+
+    /* background: linear-gradient(to top right, rgba(64,93,230),black); */
+    padding: 12px 50px;
+}
+.heading-light-bg{
     background: linear-gradient(to top right, rgba(64, 93, 230), rgba(88, 81, 216),rgba(131, 58, 180), rgba(193, 53, 132));
+}
+.heading-dark-bg{
+    background: linear-gradient(to top right, rgba(64,93,230),black);
 }
 .heading h1{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -100,6 +115,7 @@ button:active{
     border-radius: 10px;
     width: 360px;
     margin: 10px;
+    background-color: white;
 }
 .username{
     padding: 3px 15px;
@@ -109,6 +125,11 @@ button:active{
     background-color: rgb(77, 121, 207);
     
     background: linear-gradient(to top right,rgb(129, 35, 192), rgb(193, 97, 53));
+    
+    /* background: linear-gradient(to top right,rgba(64,93,230),rgb(25, 53, 190),rgb(0, 0, 62)); */
+
+
+
     color: white;
     border-radius: 10px 10px 0px 0px;
 }
@@ -157,9 +178,123 @@ button:active{
         height: 30px;
     }
 }
-@media(max-width:515px){
+@media(min-width:415px) and (max-width:515px){
     .heading{
-        font-size: .85rem;
+        font-size: .68rem;
+        border: 1px solid red;
+        padding: 10px 9px;
+        align-items: center;
+    }
+    .message-container{
+        width: 395px;
+        padding: 5px;
+    }
+    .friend-message, .mymessage{
+        width: 150px;
+    }
+    .message-send textarea{
+        width: 210px;
+        height: 30px;
+    }
+    .username p{
+        font-size: .7rem;
+    }
+    .message{
+        font-size: .65rem;
+    }
+    button{
+        font-size: .7rem;
+    }
+    .typingMessageBox{
+        font-size: .73rem;
+    }
+    .heading-logo{
+        height: 30px;
+    }
+    .light-dark img{
+        height: 30px;
+    }
+}
+@media(min-width:360px) and (max-width:415px){
+    .heading{
+        font-size: .68rem;
+        border: 1px solid red;
+        padding: 10px 9px;
+        align-items: center;
+    }
+    .message-container{
+        width: 330px;
+        padding: 5px;
+    }
+    .friend-message, .mymessage{
+        width: 150px;
+    }
+    .message-send textarea{
+        width: 210px;
+        height: 30px;
+    }
+    .username p{
+        font-size: .7rem;
+    }
+    .message{
+        font-size: .65rem;
+    }
+    button{
+        font-size: .7rem;
+    }
+    .typingMessageBox{
+        font-size: .73rem;
+    }
+    .heading-logo{
+        height: 30px;
+    }
+    .light-dark img{
+        height: 30px;
+    }
+}
+@media(min-width:310px) and (max-width:360px){
+    .heading{
+        font-size: .68rem;
+        border: 1px solid red;
+        padding: 10px 9px;
+        align-items: center;
+    }
+    .message-container{
+        width: 300px;
+        padding: 5px;
+    }
+    .friend-message, .mymessage{
+        width: 150px;
+    }
+    .message-send textarea{
+        width: 210px;
+        height: 30px;
+    }
+    .username p{
+        font-size: .7rem;
+    }
+    .message{
+        font-size: .65rem;
+    }
+    button{
+        font-size: .7rem;
+    }
+    .typingMessageBox{
+        font-size: .73rem;
+    }
+    .heading-logo{
+        height: 30px;
+    }
+    .light-dark img{
+        height: 30px;
+    }
+}
+@media(max-width:310px){
+    .heading{
+        font-size: .68rem;
+        border: 1px solid red;
+        padding: 10px 9px;
+        align-items: center;
     }
     .message-container{
         width: 280px;
@@ -184,4 +319,26 @@ button:active{
     .typingMessageBox{
         font-size: .73rem;
     }
+    .heading-logo{
+        height: 30px;
+    }
+    .light-dark img{
+        height: 30px;
+    }    
+}
+
+
+body{
+    /* background-color: #00060d; */
+    background-color: rgb(240, 234, 234);
+    background-image: url("https://www.transparenttextures.com/patterns/skulls.png");
+
+}
+
+.light-dark {
+    display: flex;
+    align-items: center;
+}
+img:active{
+    transform: scale(.9);
 }
