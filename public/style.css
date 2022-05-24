@@ -12,8 +12,9 @@
 .container{
     border-radius: 12px;
     box-shadow: rgba(173, 173, 173, 0.795) 3px 3px 13px 3px,rgba(173, 173, 173, 0.795) -3px -3px 13px 3px;
-    background-color: white;
+    /* background-color: white; */
     /* background-color: rgb(111, 129, 214); */
+
 }
 .heading{
     padding: 10px;
