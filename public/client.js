@@ -58,8 +58,26 @@ function sendMessage(msg){
     messageDiv.classList.add("message");
     messageDiv.textContent = `${msgObj.message}`;
 
+    let timeP = document.createElement("p");
+    timeP.classList.add("time");
+    let today = new Date();
+    let hour = today.getHours();
+    let min = today.getMinutes();
+    let sendingTime = "";
+    if(min<10){
+        min = "0"+min;
+    }
+    if(hour>12){
+        sendingTime = (hour-12) + ":" + min + " PM";
+    }
+    else{
+        sendingTime = hour + ":" + min + " AM";
+    }
+    timeP.innerHTML = sendingTime;
+
     mymessageDiv.appendChild(nameDiv);
     mymessageDiv.appendChild(messageDiv);
+    mymessageDiv.appendChild(timeP);
     messageContainer.appendChild(mymessageDiv);
 
     // send message to the server
@@ -80,8 +98,26 @@ function receiveMessage(msgObj){
     messageDiv.classList.add("message");
     messageDiv.textContent = `${msgObj.message}`;
 
+    let timeP = document.createElement("p");
+    timeP.classList.add("time");
+    let today = new Date();
+    let hour = today.getHours();
+    let min = today.getMinutes();
+    let sendingTime = "";
+    if(min<10){
+        min = "0"+min;
+    }
+    if(hour>12){
+        sendingTime = (hour-12) + ":" + min + " PM";
+    }
+    else{
+        sendingTime = hour + ":" + min + " AM";
+    }
+    timeP.innerHTML = sendingTime;
+
     mymessageDiv.appendChild(nameDiv);
     mymessageDiv.appendChild(messageDiv);
+    mymessageDiv.appendChild(timeP);
     messageContainer.appendChild(mymessageDiv);
 
     messageContainer.scrollTop = messageContainer.scrollHeight;
