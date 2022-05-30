@@ -1,15 +1,51 @@
 console.log("Chit Chat Console -- created by Arindam");
+const headLogo = document.getElementById("head-logo");
 const messageTextarea = document.getElementById("message-textarea"); 
 const messageContainer = document.getElementById("message-container");
 const typingContainer = document.getElementById("typing-text");
 const form = document.getElementById("form");
+const onlineUsersDiv = document.getElementById("onlineUsers");
 const socket = io();
 
 let name;
+
+var onlineUsers = [];
+
 while(!name){
     name = prompt("Enter Your Name : ");
     socket.emit("user-joined",name);
 }
+
+socket.on("online-users", (onlines)=>{
+    onlineUsers = onlines;
+})
+let flag=0;
+headLogo.addEventListener("click", function(){
+    if(flag==0){
+        flag=1;
+        onlineUsersDiv.style.display = "flex";
+        onlineUsers.forEach((onlineUser)=>{
+            var onlineUserDiv = document.createElement("div");
+            onlineUserDiv.id = "online-user";
+            onlineUserDiv.classList.add("onlineUser");
+    
+            const iDiv = document.createElement("i");
+            iDiv.classList.add("fa", "fa-circle");
+            const pDiv = document.createElement("p");
+            pDiv.innerHTML = onlineUser;
+            
+            onlineUserDiv.appendChild(iDiv);
+            onlineUserDiv.appendChild(pDiv);
+            onlineUsersDiv.appendChild(onlineUserDiv);
+        })
+    }
+    else{
+        flag=0;
+        onlineUsers.forEach((onlineUser)=>{
+            document.getElementById("online-user").remove();
+        })
+    }
+})
 
 messageTextarea.addEventListener("keyup",function(e){
     if(e.key=='Enter' && e.target.value.trim() != ""){

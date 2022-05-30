@@ -22,17 +22,46 @@
     background-color: rgb(82, 129, 224);
     border-radius: 12px 12px 0px 0px;
     display: flex;
-    /* justify-content: center; */
     justify-content: space-between;
     color: white;
     align-items: center;
-    
+    flex-direction: column;
     
     /* background: linear-gradient(to top right, rgba(64, 93, 230), rgba(88, 81, 216),rgba(131, 58, 180), rgba(193, 53, 132)); */
 
     /* background: linear-gradient(to top right, rgba(64,93,230),black); */
     padding: 12px 50px;
 }
+.heading .upperHeading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 700px;
+    /* padding: 12px 50px; */
+}
+.fa-circle{
+    color: #32cd32;
+}
+.onlineUsers{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 4px;
+    width: 500px;
+}
+.onlineUser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 8px 2px;
+}
+.onlineUser i{
+    font-size: .8rem;
+    margin-right: 5px;
+}
+
 .heading-light-bg{
     background: linear-gradient(to top right, rgba(64, 93, 230), rgba(88, 81, 216),rgba(131, 58, 180), rgba(193, 53, 132));
 }
@@ -171,7 +200,19 @@ button:active{
     .message-send textarea{
         width: 600px;
         height: 30px;
-    }    
+    }
+    .heading .upperHeading{
+        width: 595px;
+    }
+
+    .onlineUsers{
+        margin-top: 4px;
+        width: 480px;
+    }
+    .onlineUser i{
+        font-size: .7rem;
+        margin-right: 5px;
+    }
 }
 
 @media(min-width:515px) and (max-width:715px){
@@ -187,6 +228,17 @@ button:active{
     }
     .time{
         font-size: .7rem;
+    }
+    .heading .upperHeading{
+        width: 400px;
+    }
+    .onlineUsers{
+        margin-top: 4px;
+        width: 390px;
+    }
+    .onlineUser i{
+        font-size: .65rem;
+        margin-right: 5px;
     }
 }
 @media(min-width:415px) and (max-width:515px){
@@ -228,6 +280,17 @@ button:active{
     .time{
         font-size: .63rem;
     }
+    .heading .upperHeading{
+        width: 315px;
+    }
+    .onlineUsers{
+        margin-top: 4px;
+        width: 350px;
+    }
+    .onlineUser i{
+        font-size: .6rem;
+        margin-right: 5px;
+    }
 }
 @media(min-width:360px) and (max-width:415px){
     .heading{
@@ -267,6 +330,17 @@ button:active{
     }
     .time{
         font-size: .65rem;
+    }
+    .heading .upperHeading{
+        width: 295px;
+    }
+    .onlineUsers{
+        margin-top: 4px;
+        width: 290px;
+    }
+    .onlineUser i{
+        font-size: .54rem;
+        margin-right: 5px;
     }
 }
 @media(min-width:310px) and (max-width:360px){
@@ -308,6 +382,17 @@ button:active{
     .time{
         font-size: .62rem;
     }
+    .heading .upperHeading{
+        width: 280px;
+    }
+    .onlineUsers{
+        margin-top: 4px;
+        width: 270px;
+    }
+    .onlineUser i{
+        font-size: .54rem;
+        margin-right: 5px;
+    }
 }
 @media(max-width:310px){
     .heading{
@@ -347,6 +432,17 @@ button:active{
     }    
     .time{
         font-size: .57rem;
+    }
+    .heading .upperHeading{
+        width: 250px;
+    }
+    .onlineUsers{
+        margin-top: 4px;
+        width: 250px;
+    }
+    .onlineUser i{
+        font-size: .5rem;
+        margin-right: 5px;
     }
 }
 

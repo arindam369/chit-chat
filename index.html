@@ -8,20 +8,31 @@
     <title>Chit Chat</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" href="./chat.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body id="body">
     <div class="page">
         <div class="container">
-            <div class="heading heading-light-bg" id="heading" >
-                <div>
-                    <img src="./chat.png" class="heading-logo">
-                    <h1 class="heading-title">Chit Chat</h1>
+            <div class="heading heading-light-bg" id="heading">
+                
+                <div class="upperHeading">
+                    <div>
+                        <img src="./chat.png" class="heading-logo" id="head-logo">
+                        <h1 class="heading-title">Chit Chat</h1>
+                    </div>
+                    <div class="light-dark" id="light-dark">
+                        <img src="./dark.png" alt="img" height="40px" id="light-dark-logo">
+                    </div>
                 </div>
 
-                <div class="light-dark" id="light-dark">
-                    <img src="./dark.png" alt="img" height="40px" id="light-dark-logo">
+                <div class="onlineUsers" id="onlineUsers">
+                    <!-- <div class="onlineUser">
+                        <i class="fa fa-circle"></i>
+                        <p>Arindam</p>
+                    </div> -->
                 </div>
+
             </div>
 
             <div class="message-container" id="message-container">
@@ -66,7 +77,7 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="./client.js"></script>
-    
+
     <script>
         const lightDark = document.getElementById("light-dark");
         const heading = document.getElementById("heading");
@@ -75,15 +86,15 @@
 
         var darkMode = 0;
 
-        lightDark.addEventListener("click", ()=>{
-            if(darkMode == 0){
+        lightDark.addEventListener("click", () => {
+            if (darkMode == 0) {
                 darkMode = 1;
                 heading.classList.remove("heading-light-bg");
                 heading.classList.add("heading-dark-bg");
                 lightDarkLogo.src = "./light.png";
                 body.style.backgroundColor = "black";
             }
-            else{
+            else {
                 darkMode = 0;
                 heading.classList.remove("heading-dark-bg");
                 heading.classList.add("heading-light-bg");
@@ -92,7 +103,7 @@
             }
             // console.log(darkMode);
         })
-        
+
     </script>
 
 </body>
