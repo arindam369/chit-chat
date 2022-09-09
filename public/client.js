@@ -186,13 +186,16 @@ function leaveMessage(username){
     mymessageDiv.appendChild(messageDiv);
     messageContainer.appendChild(mymessageDiv);
 }
-
+let typingMessageTimeout;
 
 function typingMessage(username){
     typingContainer.textContent = `${username} is typing...`;
-    setTimeout(() => {
+    if(typingMessageTimeout){
+        clearTimeout(typingMessageTimeout);
+    }
+    typingMessageTimeout = setTimeout(() => {
         typingContainer.textContent="";
-    }, 2000);
+    }, 1000);
 }
 
 
