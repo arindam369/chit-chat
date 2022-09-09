@@ -42,7 +42,11 @@ headLogo.addEventListener("click", function(){
     else{
         flag=0;
         onlineUsers.forEach((onlineUser)=>{
-            document.getElementById("online-user").remove();
+            var elem = document.getElementById("online-user");
+            if(elem){
+                elem.remove();
+            }
+            onlineUsersDiv.style.display = "none";
         })
     }
 })
